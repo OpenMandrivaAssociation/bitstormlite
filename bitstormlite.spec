@@ -12,7 +12,7 @@ License:	GPL
 Group:		Networking/File transfer
 URL:		http://bit-storm.spaces.live.com/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Source:		http://prdownloads.sourceforge.net/bbom/%{name_orig}-%{version}.tar.bz2
+Source:		http://prdownloads.sourceforge.net/bbom/%{name_orig}-%{version}.tar.gz
 Patch0:		%{name}-0.2g-svn-r21.patch
 BuildRequires:	curl-devel
 BuildRequires:	gtk2-devel
