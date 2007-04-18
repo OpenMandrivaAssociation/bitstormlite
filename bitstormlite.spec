@@ -1,8 +1,8 @@
 %define name_orig	BitStormLite
 %define	name	%(echo %{name_orig}|tr "A-Z" "a-z")
 
-%define version 0.2g
-%define release %mkrel 2
+%define version 0.2h
+%define release %mkrel 1
 
 Summary:	A BitTorrent downloader GTK
 Name:		%{name}
@@ -12,7 +12,7 @@ License:	GPL
 Group:		Networking/File transfer
 URL:		http://bit-storm.spaces.live.com/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Source:		http://prdownloads.sourceforge.net/bbom/%{name_orig}-%{version}.tar.bz2
+Source:		http://prdownloads.sourceforge.net/bbom/%{name_orig}-%{version}.tar.gz
 Patch0:		%{name}-0.2g-svn-r21.patch
 BuildRequires:	curl-devel
 BuildRequires:	gtk2-devel
@@ -29,11 +29,11 @@ BitStormLite is a BitTorrent program use GTK2. It's main features are :
 
 %prep
 %setup -q -n %{name_orig}-%{version}
-%patch0 -p1 -b .svn-r21
+#%patch0 -p1 -b .svn-r21
 
 %build
-chmod +x ./autogen.sh
-./autogen.sh
+#chmod +x ./autogen.sh
+#./autogen.sh
 %configure2_5x
 %make
 
@@ -90,6 +90,3 @@ rm -rf %{buildroot}
 %{_bindir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_menudir}/%{name}
-
-
-
