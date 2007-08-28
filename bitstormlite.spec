@@ -41,7 +41,6 @@ rm -rf %{buildroot}
 mkdir -p %buildroot%{_datadir}/applications
 cat > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=%{name_orig}
 Comment=A BitTorrent downloader GTK
 Exec=%{_bindir}/%{name}
