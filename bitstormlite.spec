@@ -1,7 +1,7 @@
 %define name_orig	BitStormLite
 %define	name	%(echo %{name_orig}|tr "A-Z" "a-z")
 
-%define version 0.2k
+%define version 0.2m
 %define release %mkrel 1
 
 Summary:	A BitTorrent downloader GTK
@@ -10,9 +10,10 @@ Version:	%{version}
 Release:	%{release}
 License:	GPL
 Group:		Networking/File transfer
-URL:		http://bit-storm.spaces.live.com/
+URL:		http://sourceforge.net/projects/bbom/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source:		http://prdownloads.sourceforge.net/bbom/%{name_orig}-%{version}.tar.gz
+Patch0:		BitStormLite-0.2m-desktop-file.patch
 BuildRequires:	curl-devel
 BuildRequires:	gtk2-devel
 BuildRequires:	intltool
@@ -27,6 +28,7 @@ BitStormLite is a BitTorrent program use GTK2. It's main features are :
 
 %prep
 %setup -q -n %{name_orig}-%{version}
+%patch0 -p0
 
 %build
 %configure2_5x
@@ -38,18 +40,7 @@ rm -rf %{buildroot}
 
 %{find_lang} %{name_orig}
 
-mkdir -p %buildroot%{_datadir}/applications
-cat > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop << EOF
-[Desktop Entry]
-Name=%{name_orig}
-Comment=A BitTorrent downloader GTK
-Exec=%{_bindir}/%{name}
-Icon=file_transfer_section
-Terminal=false
-Type=Application
-MimeType=application/x-bittorrent;
-Categories=GTK;Network;FileTransfer;P2P;
-EOF
+install -m644 -D %{name}.desktop %buildroot%{_datadir}/applications/%{name}.desktop
 
 %clean
 rm -rf %{buildroot}
@@ -66,4 +57,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog COPYING INSTALL NEWS README
 %{_bindir}/%{name}
-%{_datadir}/applications/mandriva-%{name}.desktop
+%{_datadir}/applications/%{name}.desktop
