@@ -18,7 +18,6 @@ BuildRequires:	curl-devel
 BuildRequires:	gtk2-devel
 BuildRequires:	intltool
 BuildRequires:	gettext-devel
-BuildRequires:	boost-devel
 
 %description
 BitStormLite is a BitTorrent program use GTK2. It's main features are :
