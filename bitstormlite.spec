@@ -1,7 +1,7 @@
 %define name_orig	BitStormLite
 %define	name	%(echo %{name_orig}|tr "A-Z" "a-z")
 
-%define version 0.2n
+%define version 0.2p
 %define release %mkrel 1
 
 Summary:	A BitTorrent downloader GTK
