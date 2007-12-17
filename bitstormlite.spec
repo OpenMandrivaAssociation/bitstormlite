@@ -11,7 +11,6 @@ Release:	%{release}
 License:	GPL
 Group:		Networking/File transfer
 URL:		http://sourceforge.net/projects/bbom/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source:		http://prdownloads.sourceforge.net/bbom/%{name_orig}-%{version}.tar.gz
 Patch0:		BitStormLite-0.2m-desktop-file.patch
 BuildRequires:	curl-devel
