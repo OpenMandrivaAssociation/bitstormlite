@@ -8,7 +8,7 @@ Summary:	A BitTorrent downloader GTK
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-License:	GPL
+License:	GPLv2+
 Group:		Networking/File transfer
 URL:		http://sourceforge.net/projects/bbom/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
