@@ -15,6 +15,9 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source:		http://prdownloads.sourceforge.net/bbom/%{name_orig}-%{version}.tar.gz
 Patch0:		BitStormLite-0.2m-desktop-file.patch
 Patch1:		bitstormlite-0.2p-gcc43.patch
+Patch2:		bitstormlite-0.2p-gcc44.patch
+Patch3:		bitstormlite-0.2p-str-fmt.patch
+Patch4:		bitstormlite-0.2p-link.patch
 BuildRequires:	curl-devel
 BuildRequires:	gtk2-devel
 BuildRequires:	intltool
@@ -30,14 +33,18 @@ BitStormLite is a BitTorrent program use GTK2. It's main features are :
 %setup -q -n %{name_orig}-%{version}
 %patch0 -p0
 %patch1 -p0
+%patch2 -p0
+%patch3 -p0
+%patch4 -p0 -b .link
 
 %build
+autoreconf -fi
 %configure2_5x
 %make
 
 %install
 rm -rf %{buildroot}
-%makeinstall
+%makeinstall_std
 
 %{find_lang} %{name_orig}
 
