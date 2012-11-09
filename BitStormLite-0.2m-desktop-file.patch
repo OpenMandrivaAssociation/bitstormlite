@@ -1,0 +1,16 @@
+--- bitstormlite.desktop.orig	2007-09-20 20:44:00.000000000 +0800
++++ bitstormlite.desktop	2007-10-06 01:52:05.000000000 +0800
+@@ -1,10 +1,10 @@
+ [Desktop Entry]
+ Name=BitStormLite
+-GenericName[zh_CN]=BitStormLite
++Icon=file_transfer_section
+ Exec=bitstormlite %f
+ Type=Application
+-MimeType=application/x-bittorrent;application/x-torrent
++MimeType=application/x-bittorrent;application/x-torrent;
+ Comment=A small and fast BitTorrent client
+ Comment[zh_CN]=一个轻巧快速的BitTorrent客户端
+ Terminal=false
+-Categories=Network
++Categories=GTK;Network;FileTransfer;P2P;

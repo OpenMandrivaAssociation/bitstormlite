@@ -1,0 +1,24 @@
+--- src/BitStorm.h.gcc	2010-01-31 04:58:59.000000000 +0100
++++ src/BitStorm.h	2010-01-31 05:01:45.000000000 +0100
+@@ -26,10 +26,10 @@
+ #ifndef _BITSTORM_H_
+ #define _BITSTORM_H_
+  
++ #include <sys/types.h>
+  #include <string>
+  #include <list>
+  #include <map>
+- //#include <ext/hash_map>
+  
+  class IBTTask;
+  
+--- src/bdict.h.gcc	2010-01-31 04:58:27.000000000 +0100
++++ src/bdict.h	2010-01-31 04:58:42.000000000 +0100
+@@ -29,6 +29,7 @@
+ #include <iostream>
+ #include <string>
+ #include <cstring>
++#include <cstdio>
+ #include <map>
+ #include "bobject.h"
+ 

@@ -1,0 +1,50 @@
+--- src/binteger.h~	2007-05-17 15:05:16.000000000 +0200
++++ src/binteger.h	2008-08-07 15:42:06.000000000 +0200
+@@ -28,6 +28,7 @@
+ 
+ #include <string.h>
+ #include <string>
++#include <cstdlib>
+ #include <stdio.h>
+ #include "bobject.h"
+ 
+--- src/Socket.cpp~	2007-05-17 15:12:20.000000000 +0200
++++ src/Socket.cpp	2008-08-07 15:43:38.000000000 +0200
+@@ -29,6 +29,7 @@
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
++#include <cstring>
+ #include "Socket.h"
+ 
+ CSocket::CSocket()
+--- src/bdict.h~	2007-05-17 15:05:06.000000000 +0200
++++ src/bdict.h	2008-08-07 15:41:03.000000000 +0200
+@@ -28,6 +28,7 @@
+ 
+ #include <iostream>
+ #include <string>
++#include <cstring>
+ #include <map>
+ #include "bobject.h"
+ 
+--- src/utils.h~	2007-05-17 15:14:06.000000000 +0200
++++ src/utils.h	2008-08-07 15:42:54.000000000 +0200
+@@ -34,6 +34,7 @@
+ #include <errno.h>
+ #include <time.h>
+ #include <string>
++#include <cstring>
+ #include <sstream>
+ #include <iomanip>
+ #include <cctype>
+--- src/bstring.h~	2007-05-18 15:36:01.000000000 +0200
++++ src/bstring.h	2008-08-07 15:41:46.000000000 +0200
+@@ -27,6 +27,7 @@
+ #define _BSTRING_H_
+ 
+ #include<string>
++#include<cstdlib>
+ 
+ class CBString:public CBObject
+ {

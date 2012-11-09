@@ -1,0 +1,27 @@
+--- configure.ac.link	2010-01-31 05:13:16.000000000 +0100
++++ configure.ac	2010-01-31 05:16:29.000000000 +0100
+@@ -29,11 +29,7 @@
+ AC_SUBST(GTK_CFLAGS)
+ AC_SUBST(GTK_LIBS)
+ 
+-AC_PATH_PROG(CURL_CONFIG, curl-config, no)
+-if test "$CURL_CONFIG" = "no" ; then
+-	AC_MSG_ERROR(the curl-config script installed by libcurl could not be found.  libcurl is required.)
+-fi
+-LIBCURL_CHECK_CONFIG
++PKG_CHECK_MODULES(CURL, libcurl)
+ 
+ # Checks for header files.
+ AC_HEADER_DIRENT
+--- src/Makefile.am.link	2007-09-20 14:01:06.000000000 +0200
++++ src/Makefile.am	2010-01-31 05:16:52.000000000 +0100
+@@ -4,8 +4,7 @@
+ localedir =  $(datadir)/locale
+ INCLUDES = $(GTK_CFLAGS) -DLOCALEDIR=\"$(localedir)\"
+ 
+-bitstormlite_LDFLAGS = -lpthread $(GTK_LIBS) `curl-config --libs`
+-bitstormlite_LDADD = $(LIBINTL)
++bitstormlite_LDADD = $(LIBINTL) -lpthread $(GTK_LIBS) $(CURL_LIBS)
+ 
+ bitstormlite_SOURCES = bdict.cpp\
+ 		BitSet.cpp\

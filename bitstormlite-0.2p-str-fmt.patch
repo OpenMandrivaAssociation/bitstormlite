@@ -1,0 +1,10 @@
+--- src/LiteWindow.cpp.str	2010-01-31 05:01:57.000000000 +0100
++++ src/LiteWindow.cpp	2010-01-31 05:02:20.000000000 +0100
+@@ -529,6 +529,7 @@
+ 		GTK_DIALOG_MODAL,
+ 		GTK_MESSAGE_WARNING,
+ 		GTK_BUTTONS_OK,
++		"%s",
+ 		msg);
+ 	
+ 	gtk_dialog_run(GTK_DIALOG(dialog));
