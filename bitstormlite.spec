@@ -18,6 +18,11 @@ Patch1:		bitstormlite-0.2p-gcc43.patch
 Patch2:		bitstormlite-0.2p-gcc44.patch
 Patch3:		bitstormlite-0.2p-str-fmt.patch
 Patch4:		bitstormlite-0.2p-link.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	curl-devel
 BuildRequires:	gtk2-devel
 BuildRequires:	intltool
